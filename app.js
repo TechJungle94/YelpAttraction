@@ -10,6 +10,7 @@ var localStrategy = require('passport-local');
 var User = require('./models/user.js');
 var flash = require('connect-flash');
 
+
 var indexRoutes = require('./routes/index.js'),
 	commentRoutes = require('./routes/comments.js'),
 	attractionRoutes = require('./routes/attractions.js');
@@ -19,7 +20,14 @@ var methodOverride = require('method-override');
 // seedDB();
 // fix the  warning from mongoose
 mongoose.set('useUnifiedTopology', true);
-mongoose.connect("mongodb://localhost/yelp", {useNewUrlParser: true});
+
+mongoose.connect("mongodb+srv://attractionYelp:jiaoyi1994@attractionyelpcluster-hzqiw.mongodb.net/test?retryWrites=true&w=majority", {
+	useNewUrlParser: true,
+	useCreateIndex: true
+});
+
+// mongoose.connect("mongodb://localhost/yelp", {useNewUrlParser: true});
+
 
 //
 app.use(parser.urlencoded({extended: true}));
