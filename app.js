@@ -53,6 +53,8 @@ app.use(attractionRoutes);
 // the attraction routes always start with '/attractions'
 app.use(commentRoutes);
 
-app.listen(3000, function() {
+var port = process.env.PORT;
+
+app.listen(port, function() {
 	console.log('server start');
 })
