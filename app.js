@@ -26,6 +26,7 @@ mongoose.set('useUnifiedTopology', true);
 // 	useCreateIndex: true
 // });
 
+// process.env.DATABASEURL
 //mongoose.connect("mongodb://localhost/yelp", {useNewUrlParser: true});
 
 mongoose.connect("mongodb+srv://attractionYelp:jiaoyi1994@attractionyelpcluster-hzqiw.mongodb.net/test?retryWrites=true&w=majority", {
