@@ -21,13 +21,16 @@ var methodOverride = require('method-override');
 // fix the  warning from mongoose
 mongoose.set('useUnifiedTopology', true);
 
-mongoose.connect("mongodb+srv://attractionYelp:jiaoyi1994@attractionyelpcluster-hzqiw.mongodb.net/test?retryWrites=true&w=majority", {
+// mongoose.connect("mongodb+srv://attractionYelp:jiaoyi1994@attractionyelpcluster-hzqiw.mongodb.net/test?retryWrites=true&w=majority", {
+// 	useNewUrlParser: true,
+// 	useCreateIndex: true
+// });
+
+//mongoose.connect("mongodb://localhost/yelp", {useNewUrlParser: true});
+mongoose.connect(process.env.DATABASEURL, {
 	useNewUrlParser: true,
 	useCreateIndex: true
-});
-
-// mongoose.connect("mongodb://localhost/yelp", {useNewUrlParser: true});
-
+})
 
 //
 app.use(parser.urlencoded({extended: true}));
@@ -63,6 +66,6 @@ app.use(commentRoutes);
 
 var port = process.env.PORT;
 
-app.listen(port, function() {
+app.listen(3000, function() {
 	console.log('server start');
 })
