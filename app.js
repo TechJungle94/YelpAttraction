@@ -27,10 +27,12 @@ mongoose.set('useUnifiedTopology', true);
 // });
 
 //mongoose.connect("mongodb://localhost/yelp", {useNewUrlParser: true});
-mongoose.connect(process.env.DATABASEURL, {
+var databaseURL = process.env.DATABASEURL || "mongodb+srv://attractionYelp:jiaoyi1994@attractionyelpcluster-hzqiw.mongodb.net/test?retryWrites=true&w=majority";
+
+mongoose.connect(databaseURL, {
 	useNewUrlParser: true,
 	useCreateIndex: true
-})
+});
 
 //
 app.use(parser.urlencoded({extended: true}));
