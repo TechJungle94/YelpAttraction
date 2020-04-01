@@ -27,9 +27,8 @@ mongoose.set('useUnifiedTopology', true);
 // });
 
 //mongoose.connect("mongodb://localhost/yelp", {useNewUrlParser: true});
-var databaseURL = "mongodb+srv://attractionYelp:jiaoyi1994@attractionyelpcluster-hzqiw.mongodb.net/test?retryWrites=true&w=majority";
 
-mongoose.connect(databaseURL, {
+mongoose.connect("mongodb+srv://attractionYelp:jiaoyi1994@attractionyelpcluster-hzqiw.mongodb.net/test?retryWrites=true&w=majority", {
 	useNewUrlParser: true,
 	useCreateIndex: true
 });
